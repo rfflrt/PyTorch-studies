@@ -124,7 +124,7 @@ if option == 0:
                 running_loss = 0.0
 
     print("Finished training")
-    PATH = './cifar_net.pth'
+    PATH = './models/cifar_net.pth'
     torch.save(net.state_dict(), PATH)
     print("Model weights saved as 'cifar_net.pth'")
 
@@ -138,7 +138,7 @@ else:
     print('GroundTruth: ', ' '.join(f'{classes[labels[j]]:5s}' for j in range(4)))
 
     # Load weights
-    PATH = './cifar_net.pth'
+    PATH = './models/cifar_net.pth'
     net.load_state_dict(torch.load(PATH, weights_only=True))
 
     # Moves data to proper device
